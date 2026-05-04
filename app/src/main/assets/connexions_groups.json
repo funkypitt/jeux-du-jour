@@ -1,0 +1,242 @@
+[
+  {
+    "groups": [
+      {"category": "Fruits rouges", "words": ["fraise", "cerise", "framboise", "groseille"], "difficulty": 0},
+      {"category": "Danse", "words": ["valse", "tango", "salsa", "polka"], "difficulty": 1},
+      {"category": "Parties du visage", "words": ["bouche", "nez", "front", "menton"], "difficulty": 2},
+      {"category": "___ de fer", "words": ["chemin", "fil", "rideau", "volonte"], "difficulty": 3}
+    ]
+  },
+  {
+    "groups": [
+      {"category": "Couleurs", "words": ["rouge", "bleu", "vert", "jaune"], "difficulty": 0},
+      {"category": "Instruments à cordes", "words": ["violon", "guitare", "harpe", "banjo"], "difficulty": 1},
+      {"category": "Capitales européennes", "words": ["paris", "berlin", "rome", "madrid"], "difficulty": 2},
+      {"category": "Mots contenant un animal", "words": ["chateau", "renard", "canape", "bouton"], "difficulty": 3}
+    ]
+  },
+  {
+    "groups": [
+      {"category": "Légumes", "words": ["carotte", "tomate", "poireau", "navet"], "difficulty": 0},
+      {"category": "Sports d'équipe", "words": ["football", "rugby", "handball", "basket"], "difficulty": 1},
+      {"category": "Fleuves français", "words": ["seine", "loire", "rhone", "garonne"], "difficulty": 2},
+      {"category": "Commence par une note de musique", "words": ["domino", "soleil", "facade", "larme"], "difficulty": 3}
+    ]
+  },
+  {
+    "groups": [
+      {"category": "Saisons", "words": ["printemps", "automne", "hiver", "ete"], "difficulty": 0},
+      {"category": "Métiers de la santé", "words": ["medecin", "infirmier", "dentiste", "pharmacien"], "difficulty": 1},
+      {"category": "Fromages français", "words": ["brie", "comte", "roquefort", "camembert"], "difficulty": 2},
+      {"category": "Mots avec double lettre", "words": ["pomme", "terre", "balle", "pelle"], "difficulty": 3}
+    ]
+  },
+  {
+    "groups": [
+      {"category": "Animaux de la ferme", "words": ["vache", "poule", "cochon", "mouton"], "difficulty": 0},
+      {"category": "Matières scolaires", "words": ["maths", "histoire", "physique", "anglais"], "difficulty": 1},
+      {"category": "Mots liés au pain", "words": ["croute", "mie", "levain", "farine"], "difficulty": 2},
+      {"category": "Expressions avec 'coup'", "words": ["foudre", "grace", "main", "chapeau"], "difficulty": 3}
+    ]
+  },
+  {
+    "groups": [
+      {"category": "Boissons chaudes", "words": ["cafe", "chocolat", "tisane", "capuccino"], "difficulty": 0},
+      {"category": "Planètes", "words": ["mars", "venus", "jupiter", "saturne"], "difficulty": 1},
+      {"category": "Types de nuages", "words": ["cirrus", "cumulus", "stratus", "nimbus"], "difficulty": 2},
+      {"category": "Aussi un prénom", "words": ["olive", "rose", "marguerite", "violette"], "difficulty": 3}
+    ]
+  },
+  {
+    "groups": [
+      {"category": "Meubles", "words": ["chaise", "table", "armoire", "canape"], "difficulty": 0},
+      {"category": "Oiseaux", "words": ["aigle", "hibou", "pigeon", "merle"], "difficulty": 1},
+      {"category": "Vêtements d'hiver", "words": ["manteau", "echarpe", "bonnet", "gants"], "difficulty": 2},
+      {"category": "Mots finissant par -tion", "words": ["nation", "potion", "ration", "motion"], "difficulty": 3}
+    ]
+  },
+  {
+    "groups": [
+      {"category": "Jours de la semaine", "words": ["lundi", "mardi", "jeudi", "samedi"], "difficulty": 0},
+      {"category": "Arbres", "words": ["chene", "sapin", "bouleau", "erable"], "difficulty": 1},
+      {"category": "Termes de cuisine", "words": ["braiser", "pocher", "griller", "rotir"], "difficulty": 2},
+      {"category": "Homophones de nombres", "words": ["vingt", "cent", "vers", "seau"], "difficulty": 3}
+    ]
+  },
+  {
+    "groups": [
+      {"category": "Desserts", "words": ["gateau", "tarte", "mousse", "flan"], "difficulty": 0},
+      {"category": "Matériaux", "words": ["bois", "pierre", "metal", "verre"], "difficulty": 1},
+      {"category": "Termes musicaux", "words": ["tempo", "allegro", "forte", "piano"], "difficulty": 2},
+      {"category": "Double sens", "words": ["avocat", "pousse", "glace", "souris"], "difficulty": 3}
+    ]
+  },
+  {
+    "groups": [
+      {"category": "Parties du corps", "words": ["bras", "jambe", "coude", "genou"], "difficulty": 0},
+      {"category": "Fleurs", "words": ["tulipe", "orchidee", "pivoine", "dahlia"], "difficulty": 1},
+      {"category": "Termes d'architecture", "words": ["voute", "pilier", "facade", "corniche"], "difficulty": 2},
+      {"category": "Contient un mois", "words": ["aout", "marsouin", "juillet", "maille"], "difficulty": 3}
+    ]
+  },
+  {
+    "groups": [
+      {"category": "Moyens de transport", "words": ["train", "avion", "bateau", "velo"], "difficulty": 0},
+      {"category": "Épices", "words": ["cannelle", "curcuma", "poivre", "safran"], "difficulty": 1},
+      {"category": "Monnaies", "words": ["franc", "livre", "couronne", "dollar"], "difficulty": 2},
+      {"category": "___ de lune", "words": ["clair", "miel", "croissant", "pleine"], "difficulty": 3}
+    ]
+  },
+  {
+    "groups": [
+      {"category": "Métaux", "words": ["or", "argent", "cuivre", "bronze"], "difficulty": 0},
+      {"category": "Dieux grecs", "words": ["zeus", "athena", "hermes", "apollon"], "difficulty": 1},
+      {"category": "Types de vin", "words": ["rouge", "blanc", "rose", "mousseux"], "difficulty": 2},
+      {"category": "Faux amis anglais", "words": ["librairie", "journee", "attendre", "figure"], "difficulty": 3}
+    ]
+  },
+  {
+    "groups": [
+      {"category": "Ustensiles de cuisine", "words": ["couteau", "louche", "spatule", "fouet"], "difficulty": 0},
+      {"category": "Insectes", "words": ["abeille", "papillon", "fourmi", "coccinelle"], "difficulty": 1},
+      {"category": "Mots du théâtre", "words": ["scene", "acte", "tirade", "replique"], "difficulty": 2},
+      {"category": "Palindromes", "words": ["kayak", "radar", "ressasser", "rotor"], "difficulty": 3}
+    ]
+  },
+  {
+    "groups": [
+      {"category": "Formes géométriques", "words": ["cercle", "triangle", "carre", "losange"], "difficulty": 0},
+      {"category": "Instruments à vent", "words": ["flute", "trompette", "saxophone", "clarinette"], "difficulty": 1},
+      {"category": "Mots de l'astronomie", "words": ["eclipse", "comete", "nebuleuse", "quasar"], "difficulty": 2},
+      {"category": "Mots en -eau qui ne sont pas de l'eau", "words": ["gateau", "chateau", "bateau", "manteau"], "difficulty": 3}
+    ]
+  },
+  {
+    "groups": [
+      {"category": "Poissons", "words": ["saumon", "truite", "thon", "cabillaud"], "difficulty": 0},
+      {"category": "Jeux de cartes", "words": ["belote", "poker", "bridge", "tarot"], "difficulty": 1},
+      {"category": "Termes de navigation", "words": ["tribord", "babord", "proue", "poupe"], "difficulty": 2},
+      {"category": "Expressions avec couleur", "words": ["broyer", "rire", "nuit", "colere"], "difficulty": 3}
+    ]
+  },
+  {
+    "groups": [
+      {"category": "Condiments", "words": ["moutarde", "ketchup", "mayonnaise", "vinaigre"], "difficulty": 0},
+      {"category": "Pierres précieuses", "words": ["rubis", "saphir", "emeraude", "diamant"], "difficulty": 1},
+      {"category": "Mots latins utilisés en français", "words": ["agenda", "alibi", "album", "forum"], "difficulty": 2},
+      {"category": "Contient un fruit", "words": ["abricot", "prunier", "poirier", "cerisier"], "difficulty": 3}
+    ]
+  },
+  {
+    "groups": [
+      {"category": "Outils", "words": ["marteau", "tournevis", "pince", "scie"], "difficulty": 0},
+      {"category": "Signes du zodiaque", "words": ["belier", "lion", "balance", "verseau"], "difficulty": 1},
+      {"category": "Mots liés au cinéma", "words": ["bobine", "clap", "script", "doublure"], "difficulty": 2},
+      {"category": "Aussi un jeu", "words": ["dame", "bridge", "patience", "tarot"], "difficulty": 3}
+    ]
+  },
+  {
+    "groups": [
+      {"category": "Pays d'Afrique", "words": ["maroc", "senegal", "tunisie", "cameroun"], "difficulty": 0},
+      {"category": "Types de chapeau", "words": ["beret", "casquette", "fedora", "melon"], "difficulty": 1},
+      {"category": "Mots du droit", "words": ["verdict", "plaidoyer", "audience", "sentence"], "difficulty": 2},
+      {"category": "___ blanc", "words": ["carte", "bruit", "drapeau", "cheque"], "difficulty": 3}
+    ]
+  },
+  {
+    "groups": [
+      {"category": "Produits laitiers", "words": ["lait", "beurre", "yaourt", "creme"], "difficulty": 0},
+      {"category": "Danses latines", "words": ["samba", "rumba", "mambo", "cumbia"], "difficulty": 1},
+      {"category": "Termes de philosophie", "words": ["ethique", "logique", "morale", "vertu"], "difficulty": 2},
+      {"category": "Anagrammes entre eux", "words": ["chien", "niche", "chine", "niche"], "difficulty": 3}
+    ]
+  },
+  {
+    "groups": [
+      {"category": "Tissus", "words": ["soie", "coton", "laine", "velours"], "difficulty": 0},
+      {"category": "Peintres français", "words": ["monet", "renoir", "cezanne", "matisse"], "difficulty": 1},
+      {"category": "Mots de la météo", "words": ["brume", "averse", "grele", "brise"], "difficulty": 2},
+      {"category": "Finit par un son animal", "words": ["meowing", "pigeon", "dindon", "chaton"], "difficulty": 3}
+    ]
+  },
+  {
+    "groups": [
+      {"category": "Fruits à coque", "words": ["noix", "amande", "noisette", "pistache"], "difficulty": 0},
+      {"category": "Châteaux de la Loire", "words": ["chambord", "chenonceau", "amboise", "blois"], "difficulty": 1},
+      {"category": "Mots du football", "words": ["corner", "penalty", "hors-jeu", "lucarne"], "difficulty": 2},
+      {"category": "Contient 'or'", "words": ["tresor", "dormir", "encore", "dehors"], "difficulty": 3}
+    ]
+  },
+  {
+    "groups": [
+      {"category": "Légumineuses", "words": ["lentille", "haricot", "pois", "feve"], "difficulty": 0},
+      {"category": "Genres littéraires", "words": ["roman", "poesie", "theatre", "nouvelle"], "difficulty": 1},
+      {"category": "Termes d'escrime", "words": ["touche", "parade", "riposte", "feinte"], "difficulty": 2},
+      {"category": "Aussi une lettre grecque", "words": ["delta", "omega", "alpha", "sigma"], "difficulty": 3}
+    ]
+  },
+  {
+    "groups": [
+      {"category": "Coquillages", "words": ["moule", "huitre", "coquille", "palourde"], "difficulty": 0},
+      {"category": "Volcans", "words": ["etna", "vesuve", "piton", "fuji"], "difficulty": 1},
+      {"category": "Mots de la boulangerie", "words": ["petrir", "lever", "cuire", "enfourner"], "difficulty": 2},
+      {"category": "Polysémie: aussi un sport", "words": ["boxe", "lutte", "course", "marche"], "difficulty": 3}
+    ]
+  },
+  {
+    "groups": [
+      {"category": "Aromates", "words": ["basilic", "persil", "thym", "romarin"], "difficulty": 0},
+      {"category": "Types de pont", "words": ["suspendu", "levis", "tournant", "arc"], "difficulty": 1},
+      {"category": "Mots de la photographie", "words": ["objectif", "pose", "flash", "cadrage"], "difficulty": 2},
+      {"category": "___ de coeur", "words": ["coup", "cri", "dame", "ami"], "difficulty": 3}
+    ]
+  },
+  {
+    "groups": [
+      {"category": "Chaussures", "words": ["botte", "sandale", "basket", "mocassin"], "difficulty": 0},
+      {"category": "Rois de France", "words": ["louis", "henri", "charles", "francois"], "difficulty": 1},
+      {"category": "Mots de la marine", "words": ["ancre", "voile", "quille", "barre"], "difficulty": 2},
+      {"category": "Aussi un chiffre romain", "words": ["civil", "mixer", "video", "direct"], "difficulty": 3}
+    ]
+  },
+  {
+    "groups": [
+      {"category": "Agrumes", "words": ["orange", "citron", "pamplemousse", "mandarine"], "difficulty": 0},
+      {"category": "Écrivains français", "words": ["hugo", "zola", "balzac", "dumas"], "difficulty": 1},
+      {"category": "Mots de la danse", "words": ["entrechat", "pirouette", "arabesque", "plie"], "difficulty": 2},
+      {"category": "Féminin irrégulier", "words": ["jumeau", "vieux", "fou", "mou"], "difficulty": 3}
+    ]
+  },
+  {
+    "groups": [
+      {"category": "Herbes", "words": ["menthe", "sauge", "ciboulette", "estragon"], "difficulty": 0},
+      {"category": "Monuments parisiens", "words": ["louvre", "pantheon", "invalides", "concorde"], "difficulty": 1},
+      {"category": "Mots de la couture", "words": ["ourlet", "patron", "bobine", "epingle"], "difficulty": 2},
+      {"category": "Expressions: coup de ___", "words": ["soleil", "foudre", "maitre", "theatre"], "difficulty": 3}
+    ]
+  },
+  {
+    "groups": [
+      {"category": "Céréales", "words": ["ble", "riz", "mais", "avoine"], "difficulty": 0},
+      {"category": "Compositeurs classiques", "words": ["debussy", "ravel", "berlioz", "bizet"], "difficulty": 1},
+      {"category": "Mots de l'imprimerie", "words": ["police", "marge", "casse", "caractere"], "difficulty": 2},
+      {"category": "Homonymes: animal et autre chose", "words": ["grue", "biche", "cafard", "veau"], "difficulty": 3}
+    ]
+  },
+  {
+    "groups": [
+      {"category": "Pâtisseries", "words": ["eclair", "mille-feuille", "macaron", "chouquette"], "difficulty": 0},
+      {"category": "Régions de France", "words": ["bretagne", "alsace", "provence", "normandie"], "difficulty": 1},
+      {"category": "Mots du jardinage", "words": ["semer", "tailler", "arroser", "recolter"], "difficulty": 2},
+      {"category": "Contient 'chat'", "words": ["chateau", "rachat", "achat", "chaton"], "difficulty": 3}
+    ]
+  },
+  {
+    "groups": [
+      {"category": "Jeux de cartes", "words": ["belote", "poker", "bridge", "tarot"], "difficulty": 0},
+      {"category": "Compositeurs", "words": ["mozart", "debussy", "ravel", "berlioz"], "difficulty": 1},
+      {"category": "Chemin de ___", "words": ["fer", "croix", "traverse", "table"], "difficulty": 2},
+      {"category": "Mots d'origine provençale", "words": ["cigale", "mistral", "garrigue", "calanque"], "difficulty": 3}
+    ]
+  }
+]

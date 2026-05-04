@@ -1,0 +1,22 @@
+*.iml
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+/app/build
+/app/release
+*.apk
+*.aab
+*.jks
+*.keystore
+
+# Lexique source (large, download from lexique.org)
+Lexique383.tsv
+
+# Generated DB can be rebuilt
+# app/src/main/assets/databases/lexique.db
