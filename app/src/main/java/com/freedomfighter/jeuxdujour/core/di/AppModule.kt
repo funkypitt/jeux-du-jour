@@ -4,8 +4,6 @@ import android.content.Context
 import androidx.room.Room
 import com.freedomfighter.jeuxdujour.core.database.LexiqueDatabase
 import com.freedomfighter.jeuxdujour.core.database.WordDao
-import com.freedomfighter.jeuxdujour.core.datastore.PreferencesRepository
-import com.freedomfighter.jeuxdujour.core.sound.SoundManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -34,14 +32,5 @@ object AppModule {
     @Singleton
     fun provideWordDao(database: LexiqueDatabase): WordDao {
         return database.wordDao()
-    }
-
-    @Provides
-    @Singleton
-    fun provideSoundManager(
-        @ApplicationContext context: Context,
-        prefsRepository: PreferencesRepository
-    ): SoundManager {
-        return SoundManager(context, prefsRepository)
     }
 }
