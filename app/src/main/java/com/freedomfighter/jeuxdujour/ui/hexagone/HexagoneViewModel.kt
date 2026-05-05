@@ -3,6 +3,8 @@ package com.freedomfighter.jeuxdujour.ui.hexagone
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.freedomfighter.jeuxdujour.core.datastore.PreferencesRepository
+import com.freedomfighter.jeuxdujour.core.sound.SoundEffect
+import com.freedomfighter.jeuxdujour.core.sound.SoundManager
 import com.freedomfighter.jeuxdujour.core.util.DateUtils
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -16,7 +18,8 @@ import javax.inject.Inject
 @HiltViewModel
 class HexagoneViewModel @Inject constructor(
     private val repository: HexagoneRepository,
-    private val prefsRepository: PreferencesRepository
+    private val prefsRepository: PreferencesRepository,
+    private val soundManager: SoundManager
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(HexagoneState())
@@ -57,6 +60,7 @@ class HexagoneViewModel @Inject constructor(
     fun onLetterPress(letter: Char) {
         val current = _state.value
         if (current.gameStatus != HexagoneStatus.PLAYING) return
+        soundManager.play(SoundEffect.TAP)
         _state.value = current.copy(
             currentInput = current.currentInput + letter,
             message = null
@@ -89,15 +93,19 @@ class HexagoneViewModel @Inject constructor(
 
         when {
             word.length < HexagoneRepository.MIN_WORD_LENGTH -> {
+                soundManager.play(SoundEffect.WRONG)
                 _state.value = current.copy(message = "Trop court", currentInput = "")
             }
             !word.contains(current.centerLetter.lowercase()) -> {
+                soundManager.play(SoundEffect.WRONG)
                 _state.value = current.copy(message = "Lettre centrale manquante", currentInput = "")
             }
             word in current.foundWords -> {
+                soundManager.play(SoundEffect.WRONG)
                 _state.value = current.copy(message = "Déjà trouvé", currentInput = "")
             }
             word !in current.validWords -> {
+                soundManager.play(SoundEffect.WRONG)
                 _state.value = current.copy(message = "Mot non reconnu", currentInput = "")
             }
             else -> {
@@ -105,19 +113,30 @@ class HexagoneViewModel @Inject constructor(
                 val points = repository.scoreWord(word, current.pangrams)
                 val newScore = current.score + points
                 val newFound = current.foundWords + word
+                val oldRank = current.rank
+                val newRank = Rank.forScore(newScore, current.maxScore)
+                val isComplete = newScore >= current.maxScore
                 val msg = when {
                     isPangram -> "Pangramme ! +${points} pts"
                     points == 1 -> "+1 pt"
                     else -> "+$points pts"
                 }
 
+                when {
+                    isComplete -> soundManager.play(SoundEffect.WIN)
+                    isPangram || newRank != oldRank -> soundManager.play(SoundEffect.RANK_UP)
+                    else -> soundManager.play(SoundEffect.CORRECT)
+                }
+
                 _state.value = current.copy(
                     foundWords = newFound,
                     currentInput = "",
                     score = newScore,
-                    rank = Rank.forScore(newScore, current.maxScore),
+                    rank = newRank,
                     message = msg,
-                    gameStatus = if (newScore >= current.maxScore) HexagoneStatus.COMPLETE else HexagoneStatus.PLAYING
+                    gameStatus = if (isComplete) HexagoneStatus.COMPLETE else HexagoneStatus.PLAYING,
+                    showCelebration = isComplete,
+                    showSuccessFlash = !isComplete
                 )
 
                 viewModelScope.launch {
@@ -129,5 +148,13 @@ class HexagoneViewModel @Inject constructor(
 
     fun clearMessage() {
         _state.value = _state.value.copy(message = null)
+    }
+
+    fun dismissCelebration() {
+        _state.value = _state.value.copy(showCelebration = false)
+    }
+
+    fun dismissSuccessFlash() {
+        _state.value = _state.value.copy(showSuccessFlash = false)
     }
 }

@@ -3,6 +3,8 @@ package com.freedomfighter.jeuxdujour.ui.lemot
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.freedomfighter.jeuxdujour.core.datastore.PreferencesRepository
+import com.freedomfighter.jeuxdujour.core.sound.SoundEffect
+import com.freedomfighter.jeuxdujour.core.sound.SoundManager
 import com.freedomfighter.jeuxdujour.core.util.DateUtils
 import com.freedomfighter.jeuxdujour.ui.components.TileState
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -17,7 +19,8 @@ import javax.inject.Inject
 @HiltViewModel
 class LeMotViewModel @Inject constructor(
     private val repository: LeMotRepository,
-    private val prefsRepository: PreferencesRepository
+    private val prefsRepository: PreferencesRepository,
+    private val soundManager: SoundManager
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(LeMotState())
@@ -46,6 +49,7 @@ class LeMotViewModel @Inject constructor(
         val current = _state.value
         if (current.isGameOver || current.gameStatus == GameStatus.LOADING) return
         if (current.currentInput.length < LeMotRepository.WORD_LENGTH) {
+            soundManager.play(SoundEffect.TAP)
             _state.value = current.copy(
                 currentInput = current.currentInput + letter.uppercase(),
                 message = null
@@ -75,6 +79,7 @@ class LeMotViewModel @Inject constructor(
         viewModelScope.launch {
             val guess = current.currentInput.uppercase()
             if (!repository.isValidGuess(guess)) {
+                soundManager.play(SoundEffect.WRONG)
                 _state.value = current.copy(message = "Mot inconnu")
                 return@launch
             }
@@ -97,13 +102,26 @@ class LeMotViewModel @Inject constructor(
                 else -> null
             }
 
+            when {
+                won -> {
+                    soundManager.play(SoundEffect.WIN)
+                }
+                lost -> {
+                    soundManager.play(SoundEffect.LOSE)
+                }
+                else -> {
+                    soundManager.play(SoundEffect.POP)
+                }
+            }
+
             _state.value = current.copy(
                 guesses = newGuesses,
                 evaluations = newEvaluations,
                 currentInput = "",
                 gameStatus = newStatus,
                 message = message,
-                revealingRow = newGuesses.size - 1
+                revealingRow = newGuesses.size - 1,
+                showCelebration = won
             )
 
             saveState()
@@ -152,6 +170,10 @@ class LeMotViewModel @Inject constructor(
 
     fun clearRevealingRow() {
         _state.value = _state.value.copy(revealingRow = -1)
+    }
+
+    fun dismissCelebration() {
+        _state.value = _state.value.copy(showCelebration = false)
     }
 
     private suspend fun saveState() {

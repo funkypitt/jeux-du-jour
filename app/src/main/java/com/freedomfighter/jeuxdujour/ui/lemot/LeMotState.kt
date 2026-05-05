@@ -7,7 +7,8 @@ data class LeMotState(
     val currentInput: String = "",
     val gameStatus: GameStatus = GameStatus.LOADING,
     val message: String? = null,
-    val revealingRow: Int = -1
+    val revealingRow: Int = -1,
+    val showCelebration: Boolean = false
 ) {
     val currentRow: Int get() = guesses.size
     val isGameOver: Boolean get() = gameStatus == GameStatus.WON || gameStatus == GameStatus.LOST

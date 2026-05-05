@@ -17,6 +17,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.hapticfeedback.HapticFeedbackType
+import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -41,6 +43,8 @@ fun GameKeyboard(
     onBackspace: () -> Unit,
     modifier: Modifier = Modifier
 ) {
+    val haptic = LocalHapticFeedback.current
+
     Column(
         modifier = modifier
             .fillMaxWidth()
@@ -57,7 +61,10 @@ fun GameKeyboard(
                     KeyboardKey(
                         text = "ENT",
                         isWide = true,
-                        onClick = { onEnter() }
+                        onClick = {
+                            haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
+                            onEnter()
+                        }
                     )
                 }
                 row.forEach { letter ->
@@ -65,14 +72,20 @@ fun GameKeyboard(
                     KeyboardKey(
                         text = letter.toString(),
                         state = state,
-                        onClick = { onKeyPress(letter) }
+                        onClick = {
+                            haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
+                            onKeyPress(letter)
+                        }
                     )
                 }
                 if (index == 2) {
                     KeyboardKey(
-                        text = "⌫",
+                        text = "\u232B",
                         isWide = true,
-                        onClick = { onBackspace() }
+                        onClick = {
+                            haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
+                            onBackspace()
+                        }
                     )
                 }
             }

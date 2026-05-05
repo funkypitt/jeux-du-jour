@@ -19,7 +19,8 @@ data class HomeState(
     val hexagoneStatus: GameCardStatus = GameCardStatus.TODO,
     val connexionsStatus: GameCardStatus = GameCardStatus.TODO,
     val soundEnabled: Boolean = true,
-    val streak: Int = 0
+    val streak: Int = 0,
+    val motDuJour: MotDuJourEntry? = null
 )
 
 enum class GameCardStatus(val label: String) {
@@ -30,7 +31,8 @@ enum class GameCardStatus(val label: String) {
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val prefsRepository: PreferencesRepository
+    private val prefsRepository: PreferencesRepository,
+    private val motDuJourRepository: MotDuJourRepository
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(HomeState())
@@ -50,13 +52,16 @@ class HomeViewModel @Inject constructor(
             val connexionsState = prefsRepository.getGameState("connexions", dateKey).first()
             val prefs = prefsRepository.preferences.first()
 
+            val motDuJour = motDuJourRepository.getWordForDate(date)
+
             _state.value = HomeState(
                 dateDisplay = DateUtils.formatDisplay(date),
                 leMotStatus = parseLeMotStatus(leMotState),
                 hexagoneStatus = parseHexagoneStatus(hexagoneState),
                 connexionsStatus = parseConnexionsStatus(connexionsState),
                 soundEnabled = prefs.soundEnabled,
-                streak = prefs.currentStreak
+                streak = prefs.currentStreak,
+                motDuJour = motDuJour
             )
         }
     }

@@ -3,6 +3,8 @@ package com.freedomfighter.jeuxdujour.ui.connexions
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.freedomfighter.jeuxdujour.core.datastore.PreferencesRepository
+import com.freedomfighter.jeuxdujour.core.sound.SoundEffect
+import com.freedomfighter.jeuxdujour.core.sound.SoundManager
 import com.freedomfighter.jeuxdujour.core.util.DateUtils
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -16,7 +18,8 @@ import javax.inject.Inject
 @HiltViewModel
 class ConnexionsViewModel @Inject constructor(
     private val repository: ConnexionsRepository,
-    private val prefsRepository: PreferencesRepository
+    private val prefsRepository: PreferencesRepository,
+    private val soundManager: SoundManager
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(ConnexionsState())
@@ -57,6 +60,8 @@ class ConnexionsViewModel @Inject constructor(
         val current = _state.value
         if (current.isGameOver) return
 
+        soundManager.play(SoundEffect.TAP)
+
         val newSelected = if (word in current.selectedWords) {
             current.selectedWords - word
         } else {
@@ -77,12 +82,20 @@ class ConnexionsViewModel @Inject constructor(
             val newSolved = current.solvedGroups + matchedGroup
             val won = newSolved.size == ConnexionsRepository.NUM_GROUPS
 
+            if (won) {
+                soundManager.play(SoundEffect.WIN)
+            } else {
+                soundManager.play(SoundEffect.CORRECT)
+            }
+
             _state.value = current.copy(
                 solvedGroups = newSolved,
                 selectedWords = emptySet(),
                 gameStatus = if (won) ConnexionsStatus.WON else ConnexionsStatus.PLAYING,
                 message = if (won) "Bravo !" else null,
-                lastWrongGuess = null
+                lastWrongGuess = null,
+                showCelebration = won,
+                showSuccessFlash = !won
             )
 
             viewModelScope.launch {
@@ -94,6 +107,12 @@ class ConnexionsViewModel @Inject constructor(
             val newMistakes = current.mistakes + 1
             val isOneAway = repository.isOneAway(current.selectedWords, current.groups)
             val lost = newMistakes >= current.maxMistakes
+
+            if (lost) {
+                soundManager.play(SoundEffect.LOSE)
+            } else {
+                soundManager.play(SoundEffect.WRONG)
+            }
 
             _state.value = current.copy(
                 mistakes = newMistakes,
@@ -123,5 +142,13 @@ class ConnexionsViewModel @Inject constructor(
 
     fun clearMessage() {
         _state.value = _state.value.copy(message = null)
+    }
+
+    fun dismissCelebration() {
+        _state.value = _state.value.copy(showCelebration = false)
+    }
+
+    fun dismissSuccessFlash() {
+        _state.value = _state.value.copy(showSuccessFlash = false)
     }
 }

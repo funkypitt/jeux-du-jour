@@ -11,7 +11,9 @@ data class HexagoneState(
     val gameStatus: HexagoneStatus = HexagoneStatus.LOADING,
     val message: String? = null,
     val validWords: Set<String> = emptySet(),
-    val pangrams: Set<String> = emptySet()
+    val pangrams: Set<String> = emptySet(),
+    val showCelebration: Boolean = false,
+    val showSuccessFlash: Boolean = false
 ) {
     val allLetters: List<Char> get() = listOf(centerLetter) + outerLetters
 }

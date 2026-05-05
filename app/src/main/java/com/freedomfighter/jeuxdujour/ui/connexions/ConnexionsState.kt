@@ -9,7 +9,9 @@ data class ConnexionsState(
     val maxMistakes: Int = 4,
     val gameStatus: ConnexionsStatus = ConnexionsStatus.LOADING,
     val message: String? = null,
-    val lastWrongGuess: Set<String>? = null
+    val lastWrongGuess: Set<String>? = null,
+    val showCelebration: Boolean = false,
+    val showSuccessFlash: Boolean = false
 ) {
     val remainingWords: List<String>
         get() {
