@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jeux du Jour</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    max-width: 720px;
+    margin: 2rem auto;
+    padding: 0 1.25rem;
+    line-height: 1.55;
+    color: #222;
+  }
+  h1, h2 { line-height: 1.25; }
+  h1 { margin-bottom: 0.25rem; }
+  h2 { margin-top: 2rem; border-bottom: 1px solid #eee; padding-bottom: 0.25rem; }
+  code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  pre { background: #f6f6f6; padding: 0.75rem 1rem; overflow-x: auto; border-radius: 4px; }
+  ul { padding-left: 1.25rem; }
+  a { color: #2a5db0; }
+</style>
+</head>
+<body>
+
+<h1>Jeux du Jour</h1>
+<p><em>French daily word games — Le Mot, L'Hexagone, Connexions. Offline, no ads.</em></p>
+
+<h2>Overview</h2>
+<p>
+  Jeux du Jour is a collection of three French daily word games inspired by the New York Times
+  puzzle games. Every player gets the same puzzle on the same day, generated deterministically
+  from a date-based seed — no server needed. Native Android (Kotlin / Jetpack Compose).
+</p>
+
+<h2>Features</h2>
+<ul>
+  <li><strong>Le Mot</strong> (Wordle) — guess the 5-letter French word in 6 tries, with colour-coded feedback</li>
+  <li><strong>L'Hexagone</strong> (Spelling Bee) — form as many words as possible from 7 letters; every word must use the centre letter; climb from <em>Débutant</em> to <em>Génie</em></li>
+  <li><strong>Connexions</strong> (Connections) — sort 16 words into four groups of four; four difficulty tiers from yellow to purple</li>
+  <li>Daily puzzles seeded by date — same puzzle for everyone, same day</li>
+  <li>Dictionary powered by <a href="http://www.lexique.org/">Lexique383</a> (109,000+ French words)</li>
+  <li>30 hand-curated Connexions puzzles included</li>
+  <li>No ads, no tracking, no accounts, fully offline</li>
+</ul>
+
+<h2>Screenshots</h2>
+<p>No <code>screenshots/</code> folder is shipped with the source.</p>
+
+<h2>Build &amp; install</h2>
+<p>Standard Android Gradle project.</p>
+<pre>./gradlew assembleRelease
+# or
+./gradlew bundleRelease
+</pre>
+<p>The Lexique383 SQLite asset is checked in under <code>app/src/main/assets/databases/</code>.</p>
+
+<h2>License</h2>
+<p>MIT, per the F-Droid metadata at <code>fdroid-repo/metadata/com.freedomfighter.jeuxdujour.yml</code>.
+No <code>LICENSE</code> file is currently bundled in the source tree.</p>
+
+</body>
+</html>

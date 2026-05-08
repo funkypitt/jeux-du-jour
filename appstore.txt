@@ -1,0 +1,32 @@
+[en]
+French daily word games — Le Mot, L'Hexagone, Connexions. Offline, no ads.
+
+Jeux du Jour is a collection of three French daily word puzzles inspired by the New York Times games. Every player gets the same puzzle on the same day, generated deterministically from a date-based seed — no server, no account.
+
+Le Mot (Wordle): guess the 5-letter French word in 6 tries with colour-coded feedback.
+
+L'Hexagone (Spelling Bee): form as many words as possible from 7 letters arranged in a hexagonal grid; every word must include the centre letter. Climb from Débutant to Génie.
+
+Connexions (Connections): sort 16 words into four hidden groups of four. Four difficulty tiers from yellow to purple.
+
+- Three daily puzzles, same one for everyone
+- Dictionary powered by Lexique383 (109,000+ French words)
+- 30 hand-curated Connexions puzzles
+- Fully offline, no ads, no tracking, no accounts
+
+---
+[fr]
+Trois jeux de lettres francophones quotidiens — Le Mot, L'Hexagone, Connexions. Hors-ligne, sans pub.
+
+Jeux du Jour rassemble trois petits jeux de lettres francophones inspirés des jeux quotidiens du New York Times. Chaque joueur reçoit le même puzzle le même jour, généré de façon déterministe à partir d'une graine basée sur la date — pas de serveur, pas de compte.
+
+Le Mot (Wordle) : devinez le mot français de 5 lettres en 6 essais, avec un retour visuel coloré.
+
+L'Hexagone (Spelling Bee) : formez le plus de mots possibles à partir de 7 lettres disposées en hexagone ; chaque mot doit contenir la lettre centrale. Grimpez de Débutant à Génie.
+
+Connexions (Connections) : classez 16 mots en quatre groupes de quatre partageant un thème caché. Quatre niveaux de difficulté, du jaune au violet.
+
+- Trois puzzles quotidiens, identiques pour tout le monde
+- Dictionnaire fondé sur Lexique383 (plus de 109 000 mots français)
+- 30 grilles Connexions élaborées à la main
+- Totalement hors-ligne, sans pub, sans pistage, sans compte
